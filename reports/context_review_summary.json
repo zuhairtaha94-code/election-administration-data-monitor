@@ -1,0 +1,105 @@
+{
+  "review_date": "2026-08-17",
+  "interpretation": "Context labels describe the strength of available evidence. They are not findings of error, fraud, misconduct, or disenfranchisement.",
+  "status_definitions": {
+    "externally corroborated": "An official source independently reports a closely matching jurisdiction-level rate or count.",
+    "internally reconciled": "EAVS reason detail accounts for the reported total and official policy context is consistent, but no independent jurisdiction-level count was located.",
+    "partially reconciled": "EAVS reason detail accounts for part of the reported total, with a documented reporting limitation.",
+    "unresolved": "The aggregate arithmetic is valid, but the public record reviewed does not explain the reason distribution or independently confirm the mail-ballot rate."
+  },
+  "candidates_reviewed": 7,
+  "aggregate_reconciliation_gaps": 0,
+  "complete_reason_reconciliations": 5,
+  "status_counts": {
+    "externally corroborated": 1,
+    "internally reconciled": 4,
+    "partially reconciled": 1,
+    "unresolved": 1
+  },
+  "candidates": [
+    {
+      "jurisdiction": "Adams County, Washington",
+      "FIPSCode": "5300100000",
+      "mail_rejection_rate_pct": 2.652,
+      "state_weighted_rate_pct": 0.921,
+      "dominant_reported_reason": "nonmatching voter signature",
+      "dominant_reason_total": 121,
+      "dominant_reason_share_pct": 82.313,
+      "reason_coverage_pct": 100.0,
+      "validation_status": "externally corroborated",
+      "responsible_conclusion": "Washington's official annual report independently reports a 2.64% county rejection rate, nearly identical to EAVS's 2.65%. The rate also remained elevated across recent general elections, while EAVS identifies signature mismatch as the dominant 2024 reason."
+    },
+    {
+      "jurisdiction": "Henderson County, Texas",
+      "FIPSCode": "4821300000",
+      "mail_rejection_rate_pct": 22.214,
+      "state_weighted_rate_pct": 3.593,
+      "dominant_reported_reason": "late arrival",
+      "dominant_reason_total": 221,
+      "dominant_reason_share_pct": 71.521,
+      "reason_coverage_pct": 100.0,
+      "validation_status": "internally reconciled",
+      "responsible_conclusion": "The reason counts exactly reconcile to the reported total, and late arrival accounts for most rejections. This supports an administrative-timing interpretation, not an allegation about election integrity."
+    },
+    {
+      "jurisdiction": "Nashua Ward 5, New Hampshire",
+      "FIPSCode": "3301150265",
+      "mail_rejection_rate_pct": 6.541,
+      "state_weighted_rate_pct": 1.623,
+      "dominant_reported_reason": "voter already voted",
+      "dominant_reason_total": 37,
+      "dominant_reason_share_pct": 82.222,
+      "reason_coverage_pct": 100.0,
+      "validation_status": "internally reconciled",
+      "responsible_conclusion": "The reason counts exactly reconcile, with most ballots reported in the 'voter already voted' category. That label should not be interpreted as fraud: New Hampshire law and election procedures explicitly address interactions between absentee records and in-person voting."
+    },
+    {
+      "jurisdiction": "Orleans Parish, Louisiana",
+      "FIPSCode": "2207100000",
+      "mail_rejection_rate_pct": 6.06,
+      "state_weighted_rate_pct": 2.442,
+      "dominant_reported_reason": "late arrival",
+      "dominant_reason_total": 273,
+      "dominant_reason_share_pct": 47.811,
+      "reason_coverage_pct": 100.0,
+      "validation_status": "internally reconciled",
+      "responsible_conclusion": "The reason counts exactly reconcile. Late arrival is the largest category, while missing witness signatures and locally described certificate-envelope deficiencies account for much of the remainder."
+    },
+    {
+      "jurisdiction": "Wheatland County, Montana",
+      "FIPSCode": "3010700000",
+      "mail_rejection_rate_pct": 3.473,
+      "state_weighted_rate_pct": 0.518,
+      "dominant_reported_reason": "nonmatching voter signature",
+      "dominant_reason_total": 23,
+      "dominant_reason_share_pct": 95.833,
+      "reason_coverage_pct": 100.0,
+      "validation_status": "internally reconciled",
+      "responsible_conclusion": "The reason counts exactly reconcile, and nonmatching signatures account for nearly all reported rejections. The data also show attempted cures, so the final rejection rate should be read as an outcome after an administrative review process."
+    },
+    {
+      "jurisdiction": "Scott County, Indiana",
+      "FIPSCode": "1814300000",
+      "mail_rejection_rate_pct": 3.779,
+      "state_weighted_rate_pct": 0.214,
+      "dominant_reported_reason": "late arrival",
+      "dominant_reason_total": 135,
+      "dominant_reason_share_pct": 68.182,
+      "reason_coverage_pct": 74.747,
+      "validation_status": "partially reconciled",
+      "responsible_conclusion": "Late arrival is the largest reported category, but known reason counts cover only part of the total. Indiana's EAVS comment says the aggregate and reason details came from different systems and counties did not always track every reason field."
+    },
+    {
+      "jurisdiction": "Noble County, Ohio",
+      "FIPSCode": "3912100000",
+      "mail_rejection_rate_pct": 4.329,
+      "state_weighted_rate_pct": 0.591,
+      "dominant_reported_reason": "no reason detail reported",
+      "dominant_reason_total": 0,
+      "dominant_reason_share_pct": 0.0,
+      "reason_coverage_pct": 0.0,
+      "validation_status": "unresolved",
+      "responsible_conclusion": "The aggregate is internally consistent, but all detailed EAVS rejection-reason fields are zero. The official result report combines mailed and in-person absentee voting, so it cannot validate the EAVS mail-only denominator or explain the 39 rejections."
+    }
+  ]
+}

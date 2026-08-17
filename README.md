@@ -55,6 +55,17 @@ The current screen compares jurisdictions only with eligible peers in the same s
 
 The full approach, equations, assumptions, and limitations are documented in [`docs/methodology.md`](docs/methodology.md).
 
+## Contextual review outcome
+
+The seven mail-ballot candidates were checked against their detailed EAVS reason fields and official state or local documentation. All seven passed the aggregate arithmetic check (`counted + rejected = returned`). Five had detailed reason counts that exactly reconciled to the rejection total.
+
+- **1 externally corroborated:** Washington's official annual report independently published an Adams County rate of 2.64%, nearly identical to the 2.65% EAVS rate.
+- **4 internally reconciled:** EAVS reason detail fully accounted for the total and official policy context was consistent, but no independent jurisdiction-level rejection count was located.
+- **1 partially reconciled:** Scott County's reason detail covered 74.7% of rejections, and the EAVS comment documented a multi-system reporting limitation.
+- **1 unresolved:** Noble County's aggregate was valid, but all detailed reason fields were zero and the official public sources reviewed did not contain a comparable mail-only rejection table.
+
+Read the [analytical brief](reports/analytical_brief.md) or download the [portfolio PDF](output/pdf/election_administration_data_brief.pdf). The evidence-level review is also available as a [machine-readable CSV](reports/context_review.csv).
+
 ![Mail-ballot rates selected for contextual review](reports/figures/mail_review_candidates.png)
 
 ![Highest-priority list-maintenance review candidates](reports/figures/removal_review_candidates.png)
@@ -71,6 +82,7 @@ election-administration-data-monitor/
 ├── docs/
 │   └── decision_log.md
 ├── notebooks/        # Numbered exploratory and analytical notebooks
+├── output/pdf/       # Publication-ready portfolio brief
 ├── reports/
 │   └── figures/      # Final publication-ready figures
 ├── scripts/          # Reproducible data acquisition and audit commands
@@ -84,7 +96,7 @@ election-administration-data-monitor/
 
 ## Project status
 
-**Phase 4 — State-aware statistical triage complete.** The official source release is checksum-verified. The data contain 6,461 jurisdiction records and 535 documented columns, with one unique FIPS identifier per record and complete alignment between the CSV and codebook. Source audit, metric validation, automated tests, state-aware screening, and publication-ready figures are implemented. Contextual validation and the final analytical brief are next.
+**Complete.** The official source release is checksum-verified. The data contain 6,461 jurisdiction records and 535 documented columns, with one unique FIPS identifier per record and complete alignment between the CSV and codebook. Source audit, metric validation, automated tests, state-aware screening, contextual validation, publication-ready figures, and the final analytical brief are implemented.
 
 ## Reproducibility
 
@@ -98,6 +110,8 @@ python scripts/audit_source_data.py
 python scripts/build_analysis_dataset.py
 python scripts/run_outlier_triage.py
 python scripts/create_figures.py
+python scripts/build_context_review.py
+python scripts/create_brief_pdf.py
 python -m unittest discover -s tests -v
 ```
 

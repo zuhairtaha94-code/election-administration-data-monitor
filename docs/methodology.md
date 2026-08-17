@@ -47,6 +47,24 @@ High-side values above 3.5 are prioritized for review. The log transform reduces
 - Multiple high values in one state may reflect a shared administrative or reporting pattern.
 - Contextual validation against state and local documentation is required before any substantive claim.
 
+## Contextual-review protocol
+
+Mail-ballot candidates selected by the statistical screen are reviewed in four stages:
+
+1. Recheck `counted + rejected = returned` for the jurisdiction aggregate.
+2. Sum all nonnegative detailed rejection-reason fields and compare that sum with the reported rejection total.
+3. Review EAVS comments and cure fields without converting valid skips or unavailable responses to zero.
+4. Search official state and local sources for a directly comparable count or rate and, separately, for policy or reporting context.
+
+Each record then receives one evidence label:
+
+- **Externally corroborated:** an official source independently reports a closely matching jurisdiction-level rate or count.
+- **Internally reconciled:** detailed EAVS reasons account for the total and official policy context is consistent, but no independent jurisdiction-level count was located.
+- **Partially reconciled:** detailed EAVS reasons account for part of the total, with a documented reporting limitation.
+- **Unresolved:** the aggregate arithmetic is valid, but the reviewed public record does not explain the reason distribution or independently confirm the mail-ballot rate.
+
+These labels describe evidence strength. They are not findings of error, fraud, misconduct, or disenfranchisement.
+
 ## Method references
 
 - [U.S. Election Assistance Commission, 2024 EAVS Comprehensive Report](https://www.eac.gov/sites/default/files/2025-07/2024_EAVS_Report_508.pdf)

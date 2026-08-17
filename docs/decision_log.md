@@ -85,3 +85,17 @@ This file records consequential project decisions and the reasoning behind them.
 **Rationale:** List-maintenance intensity is continuous, nonnegative, and strongly right-skewed. The log transform reduces skew, while the median and median absolute deviation reduce sensitivity to extreme observations. The 3.5 threshold follows the potential-outlier guidance summarized in the NIST/SEMATECH e-Handbook.
 
 **Limitation:** The score describes statistical extremeness only. It does not account directly for the timing or legal basis of removals and must not be interpreted as the share of current voters removed.
+
+## 2026-08-17 — Separate reconciliation from corroboration
+
+**Decision:** Assign each mail-ballot review candidate one of four evidence labels: externally corroborated, internally reconciled, partially reconciled, or unresolved.
+
+**Rationale:** Aggregate arithmetic, detailed EAVS reason counts, official policy context, and an independent jurisdiction-level count answer different questions. Combining them into a single “confirmed” label would overstate the evidence. The four categories make the review auditable and preserve uncertainty.
+
+**Application:** All seven candidates satisfy `counted + rejected = returned`. Five detailed reason profiles exactly reconcile. Adams County, Washington is externally corroborated by a nearly identical official state-reported county rate. Scott County, Indiana is partially reconciled because its reason counts cover 74.7% of the total and the EAVS comment documents multi-system reporting. Noble County, Ohio remains unresolved because its detailed reason fields are zero and the official public result reviewed is not comparable with the EAVS mail-only denominator.
+
+## 2026-08-17 — Treat policy context as explanatory, not confirmatory
+
+**Decision:** Official statutes, deadlines, and cure instructions may clarify why an EAVS category is administratively plausible, but they do not independently confirm a jurisdiction's reported count.
+
+**Rationale:** A statewide receipt deadline can contextualize a “late arrival” category, and a cure rule can clarify a signature-rejection process. Neither source verifies how many ballots a particular jurisdiction rejected. The brief therefore distinguishes official policy context from independent local or state reporting of the same jurisdiction-level outcome.

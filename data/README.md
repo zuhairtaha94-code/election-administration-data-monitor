@@ -44,6 +44,8 @@ Run the state-aware screen with:
 ```bash
 python scripts/run_outlier_triage.py
 python scripts/create_figures.py
+python scripts/build_context_review.py
+python scripts/create_brief_pdf.py
 ```
 
-This produces the ignored `data/processed/outlier_triage.csv`, a committed summary of the screening results, and publication-ready figures.
+This produces the ignored `data/processed/outlier_triage.csv`, committed screening and contextual-review summaries, publication-ready figures, and the final PDF brief. Contextual source metadata and evidence labels are version-controlled in `data/context_sources.json`.

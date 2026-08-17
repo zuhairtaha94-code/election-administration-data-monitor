@@ -1,0 +1,132 @@
+{
+  "review_date": "2026-08-17",
+  "interpretation": "Context labels describe the strength of available evidence. They are not findings of error, fraud, misconduct, or disenfranchisement.",
+  "status_definitions": {
+    "externally corroborated": "An official source independently reports a closely matching jurisdiction-level rate or count.",
+    "internally reconciled": "EAVS reason detail accounts for the reported total and official policy context is consistent, but no independent jurisdiction-level count was located.",
+    "partially reconciled": "EAVS reason detail accounts for part of the reported total, with a documented reporting limitation.",
+    "unresolved": "The aggregate arithmetic is valid, but the public record reviewed does not explain the reason distribution or independently confirm the mail-ballot rate."
+  },
+  "candidates": [
+    {
+      "fips": "1814300000",
+      "display_name": "Scott County, Indiana",
+      "validation_status": "partially reconciled",
+      "evidence_level": "EAVS reason detail plus official state reporting context",
+      "responsible_conclusion": "Late arrival is the largest reported category, but known reason counts cover only part of the total. Indiana's EAVS comment says the aggregate and reason details came from different systems and counties did not always track every reason field.",
+      "external_evidence": "Indiana's November 2024 election bulletin documents a 6 p.m. Election Day receipt deadline and identifies the CEB-9 Section II filing as an EAVS input. It does not independently confirm Scott County's rejection count.",
+      "sources": [
+        {
+          "title": "Indiana Election Division, November 2024 Dispatch",
+          "url": "https://www.in.gov/sos/elections/files/Dispatch.Nov-2024.FINAL.pdf",
+          "source_type": "official state reporting and deadline context"
+        }
+      ]
+    },
+    {
+      "fips": "3912100000",
+      "display_name": "Noble County, Ohio",
+      "validation_status": "unresolved",
+      "evidence_level": "EAVS aggregate plus official local election results",
+      "responsible_conclusion": "The aggregate is internally consistent, but all detailed EAVS rejection-reason fields are zero. The official result report combines mailed and in-person absentee voting, so it cannot validate the EAVS mail-only denominator or explain the 39 rejections.",
+      "external_evidence": "Noble County's official 2024 result report lists 3,181 absentee ballots cast, a broader category than EAVS mail returns. No public official rejection-reason report was located during this review.",
+      "sources": [
+        {
+          "title": "Noble County Board of Elections, 2024 General Election Official Results",
+          "url": "https://www.boe.ohio.gov/noble/c/elecres/20241105results.pdf",
+          "source_type": "official local results; not directly comparable"
+        }
+      ]
+    },
+    {
+      "fips": "4821300000",
+      "display_name": "Henderson County, Texas",
+      "validation_status": "internally reconciled",
+      "evidence_level": "Complete EAVS reason reconciliation plus official state policy context",
+      "responsible_conclusion": "The reason counts exactly reconcile to the reported total, and late arrival accounts for most rejections. This supports an administrative-timing interpretation, not an allegation about election integrity.",
+      "external_evidence": "Texas's 2024 election calendar set the regular mail-ballot receipt deadline at 7 p.m. on Election Day, with limited statutory exceptions. Texas also provided a post-election process for correcting eligible carrier-envelope defects.",
+      "sources": [
+        {
+          "title": "Texas Secretary of State, November 5, 2024 Election Law Calendar",
+          "url": "https://www.sos.state.tx.us/elections/laws/advisory2024-17-nov-5-dec-14-2024-election-calendar.shtml",
+          "source_type": "official state deadline context"
+        },
+        {
+          "title": "Texas Secretary of State, Carrier-Envelope Corrective Action Guidance",
+          "url": "https://www.sos.state.tx.us/elections/laws/advisory2023-13.shtml",
+          "source_type": "official state cure-process context"
+        }
+      ]
+    },
+    {
+      "fips": "3301150265",
+      "display_name": "Nashua Ward 5, New Hampshire",
+      "validation_status": "internally reconciled",
+      "evidence_level": "Complete EAVS reason reconciliation plus official legal and local-results context",
+      "responsible_conclusion": "The reason counts exactly reconcile, with most ballots reported in the 'voter already voted' category. That label should not be interpreted as fraud: New Hampshire law and election procedures explicitly address interactions between absentee records and in-person voting.",
+      "external_evidence": "New Hampshire law bars a voter already marked as having voted absentee from voting again in person. Nashua publishes the corresponding official ward-level election return, but it does not provide an independent rejection-reason table.",
+      "sources": [
+        {
+          "title": "New Hampshire RSA 659:55, Absentee Voter Not to Vote in Person",
+          "url": "https://gc.nh.gov/rsa/html/LXIII/659/659-55.htm",
+          "source_type": "official legal context"
+        },
+        {
+          "title": "City of Nashua, 2024 General Election Results",
+          "url": "https://www.nashuanh.gov/DocumentCenter/View/31291/Nashua_GE-11052024_Results?bidId=",
+          "source_type": "official local results"
+        }
+      ]
+    },
+    {
+      "fips": "2207100000",
+      "display_name": "Orleans Parish, Louisiana",
+      "validation_status": "internally reconciled",
+      "evidence_level": "Complete EAVS reason reconciliation plus official state policy context",
+      "responsible_conclusion": "The reason counts exactly reconcile. Late arrival is the largest category, while missing witness signatures and locally described certificate-envelope deficiencies account for much of the remainder.",
+      "external_evidence": "Louisiana's official instructions require voter and witness information on the certificate envelope and describe notice and cure for specified deficiencies. This supports the categories reported in EAVS but does not independently confirm the parish count.",
+      "sources": [
+        {
+          "title": "Louisiana Secretary of State, Absentee Voting Frequently Asked Questions",
+          "url": "https://www.sos.la.gov/elections-voting/absentee-voting-faqs",
+          "source_type": "official state ballot-completion and cure context"
+        },
+        {
+          "title": "City of New Orleans, Absentee Ballots",
+          "url": "https://nola.gov/absentee-ballots/",
+          "source_type": "official local deadline and return context"
+        }
+      ]
+    },
+    {
+      "fips": "3010700000",
+      "display_name": "Wheatland County, Montana",
+      "validation_status": "internally reconciled",
+      "evidence_level": "Complete EAVS reason reconciliation plus official state cure-process context",
+      "responsible_conclusion": "The reason counts exactly reconcile, and nonmatching signatures account for nearly all reported rejections. The data also show attempted cures, so the final rejection rate should be read as an outcome after an administrative review process.",
+      "external_evidence": "Montana's official voter site tells voters how to track and resolve a rejected ballot by completing a signature form and providing identification. It does not independently confirm Wheatland County's count.",
+      "sources": [
+        {
+          "title": "Montana Secretary of State, Resolve a Rejected Ballot",
+          "url": "https://votemt.gov/resolve-my-ballot/",
+          "source_type": "official state cure-process context"
+        }
+      ]
+    },
+    {
+      "fips": "5300100000",
+      "display_name": "Adams County, Washington",
+      "validation_status": "externally corroborated",
+      "evidence_level": "Complete EAVS reason reconciliation plus independent official county rate",
+      "responsible_conclusion": "Washington's official annual report independently reports a 2.64% county rejection rate, nearly identical to EAVS's 2.65%. The rate also remained elevated across recent general elections, while EAVS identifies signature mismatch as the dominant 2024 reason.",
+      "external_evidence": "Washington's 2024 annual report gives Adams County a 2.64% general-election rejection rate and reports 2.41% in 2023. It also identifies signature mismatch as the leading statewide 2024 general-election rejection reason and describes the cure opportunity.",
+      "sources": [
+        {
+          "title": "Washington Secretary of State, 2024 Annual Report of State Elections",
+          "url": "https://www.sos.wa.gov/sites/default/files/2025-10/2024%20Annual%20Elections%20Report.pdf",
+          "source_type": "independent official county rate and statewide reason context"
+        }
+      ]
+    }
+  ]
+}
