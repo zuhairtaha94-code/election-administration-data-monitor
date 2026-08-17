@@ -38,3 +38,12 @@ python scripts/build_analysis_dataset.py
 ```
 
 The build produces `data/processed/analysis_jurisdictions.csv`. The processed CSV is excluded from Git because it is reproducible from the official source files and project code.
+
+Run the state-aware screen with:
+
+```bash
+python scripts/run_outlier_triage.py
+python scripts/create_figures.py
+```
+
+This produces the ignored `data/processed/outlier_triage.csv`, a committed summary of the screening results, and publication-ready figures.

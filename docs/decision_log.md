@@ -63,3 +63,25 @@ This file records consequential project decisions and the reasoning behind them.
 **Decision:** Report `A12a / A1a * 1,000` only as removals per 1,000 registered voters and require at least 1,000 registered voters for formal comparison.
 
 **Rationale:** The numerator covers removal activity over the EAVS reporting period, while the denominator is a point-in-time registration count. Turnover means the measure may legitimately exceed 1,000; it must not be described as a share of voters removed. The threshold limits small-denominator instability while retaining 4,640 jurisdictions across 53 states and territories.
+
+## 2026-08-17 — Compare jurisdictions within states
+
+**Decision:** Build state-aware screens only where at least 10 eligible jurisdiction peers are available.
+
+**Rationale:** State laws and procedures shape mail-ballot verification, curing, deadlines, and list maintenance. State reporting structures also differ. Within-state screening reduces—but does not eliminate—these comparability problems. Ten peers provide a minimum basis for fitting or estimating a state distribution without implying that every state model is equally informative.
+
+## 2026-08-17 — Use a beta-binomial screen for mail rejections
+
+**Decision:** Fit a separate beta-binomial distribution to eligible jurisdiction counts within each state. Flag a high-side record when its upper-tail probability is below a within-state Bonferroni threshold of `0.05 / peer count` and its 95% Wilson interval lower bound exceeds the state weighted rejection rate.
+
+**Rationale:** A beta-binomial model uses both rejected and returned ballot counts while allowing genuine rejection probabilities to vary across jurisdictions. This is more appropriate than treating every ballot as an independent draw from one fixed state probability. The familywise correction limits the chance of producing review candidates merely because many jurisdictions were screened.
+
+**Limitation:** The model is a screening device, not a causal or error-detection model. Each record contributes to the in-sample state distribution, and policy or reporting differences may remain within states.
+
+## 2026-08-17 — Use a robust screen for list-maintenance intensity
+
+**Decision:** Apply the modified z-score to `log1p(removals per 1,000)` within eligible state peer groups and prioritize high-side values above 3.5.
+
+**Rationale:** List-maintenance intensity is continuous, nonnegative, and strongly right-skewed. The log transform reduces skew, while the median and median absolute deviation reduce sensitivity to extreme observations. The 3.5 threshold follows the potential-outlier guidance summarized in the NIST/SEMATECH e-Handbook.
+
+**Limitation:** The score describes statistical extremeness only. It does not account directly for the timing or legal basis of removals and must not be interpreted as the share of current voters removed.

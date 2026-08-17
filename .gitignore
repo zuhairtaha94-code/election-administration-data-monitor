@@ -28,4 +28,6 @@ data/processed/*
 # Generated reports and temporary outputs
 reports/figures/*
 !reports/figures/.gitkeep
+!reports/figures/*.png
+!reports/figures/*.svg
 tmp/

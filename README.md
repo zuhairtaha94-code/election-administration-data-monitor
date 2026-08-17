@@ -45,6 +45,20 @@ This project therefore treats an outlier as a **prompt for contextual review**, 
 - List-maintenance intensity uses `A12a / A1a * 1,000` and requires at least 1,000 registered voters for comparison.
 - The list-maintenance measure compares two-year removal activity with a point-in-time registration count. It is not a probability and can exceed 1,000 removals per 1,000 registered voters.
 
+## State-aware screening results
+
+The current screen compares jurisdictions only with eligible peers in the same state or territory. Peer groups require at least 10 jurisdictions.
+
+- A beta-binomial mail-rejection screen modeled 2,605 jurisdictions across 43 states and territories and identified seven high-priority records for contextual review.
+- A robust list-maintenance screen covered 4,624 jurisdictions across 45 states and territories and identified 57 review candidates across 21 states.
+- These are statistical leads, not findings of error, fraud, misconduct, or disenfranchisement.
+
+The full approach, equations, assumptions, and limitations are documented in [`docs/methodology.md`](docs/methodology.md).
+
+![Mail-ballot rates selected for contextual review](reports/figures/mail_review_candidates.png)
+
+![Highest-priority list-maintenance review candidates](reports/figures/removal_review_candidates.png)
+
 ## Repository structure
 
 ```text
@@ -70,7 +84,7 @@ election-administration-data-monitor/
 
 ## Project status
 
-**Phase 3 — Metric validation complete.** The official source release is checksum-verified. The data contain 6,461 jurisdiction records and 535 documented columns, with one unique FIPS identifier per record and complete alignment between the CSV and codebook. After denominator and reconciliation rules, 2,621 jurisdictions across 50 states and territories are eligible for mail-rejection comparison, and 4,640 jurisdictions across 53 states and territories are eligible for list-maintenance comparison. State-aware outlier triage is next.
+**Phase 4 — State-aware statistical triage complete.** The official source release is checksum-verified. The data contain 6,461 jurisdiction records and 535 documented columns, with one unique FIPS identifier per record and complete alignment between the CSV and codebook. Source audit, metric validation, automated tests, state-aware screening, and publication-ready figures are implemented. Contextual validation and the final analytical brief are next.
 
 ## Reproducibility
 
@@ -82,6 +96,8 @@ Run the current pipeline from the repository root:
 python scripts/download_eavs.py
 python scripts/audit_source_data.py
 python scripts/build_analysis_dataset.py
+python scripts/run_outlier_triage.py
+python scripts/create_figures.py
 python -m unittest discover -s tests -v
 ```
 
