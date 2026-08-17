@@ -41,3 +41,25 @@ This file records consequential project decisions and the reasoning behind them.
 **Rationale:** This follows the definition used in the EAC's 2024 comprehensive report. The analysis will require a positive denominator and will later add a minimum-denominator threshold.
 
 **Quality-control note:** For records where all three values are available, compare `C8a + C9a` with `C1b`. A nonzero difference is a reporting or reconciliation flag requiring context, not proof that any individual field is wrong.
+
+## 2026-08-17 — Use tiered mail-ballot denominator rules
+
+**Decision:** Retain jurisdictions with 100–499 returned mail ballots for descriptive review, but require at least 500 returned ballots for formal comparison.
+
+**Rationale:** A single rejected ballot changes the observed rate by one percentage point when the denominator is 100, but by no more than 0.2 percentage points at 500. The 500-ballot comparison threshold retains 2,676 jurisdictions across 50 states and territories before reconciliation exclusions. Wilson confidence intervals are also retained so the threshold does not imply equal precision above the cutoff.
+
+**Tradeoff:** A threshold improves rate stability but disproportionately excludes small jurisdictions. Descriptive records remain available, and the final report will disclose the resulting coverage rather than generalize to all jurisdictions.
+
+## 2026-08-17 — Define a material mail-ballot reconciliation gap
+
+**Decision:** Flag a reconciliation difference as material only when its absolute value exceeds both 10 ballots and 1% of returned mail ballots.
+
+**Rationale:** Requiring both conditions avoids treating a few ballots in a small jurisdiction or a tiny proportional difference in a large jurisdiction as equivalent to a consequential mismatch. At the 500-ballot comparison threshold, this rule excludes 55 of 2,676 otherwise eligible records.
+
+**Limitation:** This is a transparent triage rule, not proof that excluded records are erroneous. The thresholds will remain visible as named constants and in the validation summary.
+
+## 2026-08-17 — Treat list removals as administrative intensity, not probability
+
+**Decision:** Report `A12a / A1a * 1,000` only as removals per 1,000 registered voters and require at least 1,000 registered voters for formal comparison.
+
+**Rationale:** The numerator covers removal activity over the EAVS reporting period, while the denominator is a point-in-time registration count. Turnover means the measure may legitimately exceed 1,000; it must not be described as a share of voters removed. The threshold limits small-denominator instability while retaining 4,640 jurisdictions across 53 states and territories.

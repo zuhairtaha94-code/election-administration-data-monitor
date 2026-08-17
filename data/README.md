@@ -30,3 +30,11 @@ The download script fails if a file does not match the documented release. Run t
 ```bash
 python scripts/audit_source_data.py
 ```
+
+Build the ignored, analysis-ready jurisdiction file and the committed validation summary with:
+
+```bash
+python scripts/build_analysis_dataset.py
+```
+
+The build produces `data/processed/analysis_jurisdictions.csv`. The processed CSV is excluded from Git because it is reproducible from the official source files and project code.

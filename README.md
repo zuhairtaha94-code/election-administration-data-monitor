@@ -36,6 +36,15 @@ This project therefore treats an outlier as a **prompt for contextual review**, 
 - The analysis will not use personally identifiable voter information.
 - Methods, exclusions, and unresolved data-quality questions will be documented.
 
+## Implemented validation rules
+
+- Mail-ballot rejection rates use `C9a / C1b * 100`, following the EAC's published definition.
+- Jurisdictions with 100–499 returned mail ballots remain available for descriptive review, but formal comparisons require at least 500 returns.
+- A mail-ballot reconciliation gap is treated as material only when `C8a + C9a - C1b` differs by more than 10 ballots **and** more than 1% of returned ballots.
+- Eligible mail rates include 95% Wilson confidence intervals so uncertainty remains visible.
+- List-maintenance intensity uses `A12a / A1a * 1,000` and requires at least 1,000 registered voters for comparison.
+- The list-maintenance measure compares two-year removal activity with a point-in-time registration count. It is not a probability and can exceed 1,000 removals per 1,000 registered voters.
+
 ## Repository structure
 
 ```text
@@ -61,11 +70,20 @@ election-administration-data-monitor/
 
 ## Project status
 
-**Phase 2 — Source acquisition and audit complete.** The official source release is checksum-verified. The data contain 6,461 jurisdiction records and 535 documented columns, with one unique FIPS identifier per record and complete alignment between the CSV and codebook. Metric validation and denominator rules are next.
+**Phase 3 — Metric validation complete.** The official source release is checksum-verified. The data contain 6,461 jurisdiction records and 535 documented columns, with one unique FIPS identifier per record and complete alignment between the CSV and codebook. After denominator and reconciliation rules, 2,621 jurisdictions across 50 states and territories are eligible for mail-rejection comparison, and 4,640 jurisdictions across 53 states and territories are eligible for list-maintenance comparison. State-aware outlier triage is next.
 
 ## Reproducibility
 
-The raw EAVS files are not stored in this repository. Download instructions, source URLs, release versions, and integrity checks will be documented in `data/README.md`. Exact dependency versions will be captured after the initial environment is verified.
+The raw EAVS files are not stored in this repository. Download instructions, source URLs, release versions, integrity checks, and build commands are documented in `data/README.md`.
+
+Run the current pipeline from the repository root:
+
+```bash
+python scripts/download_eavs.py
+python scripts/audit_source_data.py
+python scripts/build_analysis_dataset.py
+python -m unittest discover -s tests -v
+```
 
 ## License
 

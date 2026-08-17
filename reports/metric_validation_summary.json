@@ -1,0 +1,137 @@
+{
+  "rules": {
+    "mail_descriptive_minimum_returned": 100,
+    "mail_comparison_minimum_returned": 500,
+    "mail_material_reconciliation_gap": {
+      "absolute_ballots_greater_than": 10,
+      "relative_share_greater_than": 0.01,
+      "logic": "both conditions must be true"
+    },
+    "removal_comparison_minimum_registered": 1000
+  },
+  "mail_rejection_metric": {
+    "definition": "C9a / C1b * 100",
+    "rate_available": 6088,
+    "meets_comparison_denominator": 2676,
+    "material_reconciliation_exclusions_at_comparison_threshold": 55,
+    "comparison_eligible": 2621,
+    "eligible_states_and_territories": 50,
+    "eligible_rate_distribution_pct": {
+      "count": 2621,
+      "minimum": 0.0,
+      "median": 0.7001,
+      "p95": 4.0268,
+      "p99": 6.5684,
+      "maximum": 22.2142
+    },
+    "denominator_sensitivity": [
+      {
+        "minimum_denominator": 1,
+        "jurisdictions": 6088,
+        "states_and_territories": 52,
+        "median": 0.3862,
+        "p99": 10.358,
+        "maximum": 67.4157
+      },
+      {
+        "minimum_denominator": 50,
+        "jurisdictions": 5112,
+        "states_and_territories": 52,
+        "median": 0.5493,
+        "p99": 9.6538,
+        "maximum": 67.4157
+      },
+      {
+        "minimum_denominator": 100,
+        "jurisdictions": 4435,
+        "states_and_territories": 51,
+        "median": 0.6008,
+        "p99": 9.4054,
+        "maximum": 67.4157
+      },
+      {
+        "minimum_denominator": 250,
+        "jurisdictions": 3493,
+        "states_and_territories": 50,
+        "median": 0.6532,
+        "p99": 7.7431,
+        "maximum": 24.8634
+      },
+      {
+        "minimum_denominator": 500,
+        "jurisdictions": 2676,
+        "states_and_territories": 50,
+        "median": 0.7033,
+        "p99": 6.9374,
+        "maximum": 22.2222
+      },
+      {
+        "minimum_denominator": 1000,
+        "jurisdictions": 2003,
+        "states_and_territories": 49,
+        "median": 0.755,
+        "p99": 6.4215,
+        "maximum": 22.2222
+      }
+    ]
+  },
+  "list_maintenance_metric": {
+    "definition": "A12a / A1a * 1000",
+    "interpretation": "Two-year removal activity relative to a point-in-time registration count; not a probability and may exceed 1000.",
+    "rate_available": 6341,
+    "comparison_eligible": 4640,
+    "eligible_states_and_territories": 53,
+    "complete_reason_detail": 278,
+    "complete_reason_detail_nonzero_reconciliation_gaps": 0,
+    "eligible_rate_distribution_per_1000": {
+      "count": 4640,
+      "minimum": 0.0,
+      "median": 81.1938,
+      "p95": 161.9046,
+      "p99": 232.9598,
+      "maximum": 1207.577
+    },
+    "denominator_sensitivity": [
+      {
+        "minimum_denominator": 1,
+        "jurisdictions": 6341,
+        "states_and_territories": 53,
+        "median": 72.8386,
+        "p99": 228.5137,
+        "maximum": 1207.577
+      },
+      {
+        "minimum_denominator": 500,
+        "jurisdictions": 5409,
+        "states_and_territories": 53,
+        "median": 76.6796,
+        "p99": 227.9754,
+        "maximum": 1207.577
+      },
+      {
+        "minimum_denominator": 1000,
+        "jurisdictions": 4640,
+        "states_and_territories": 53,
+        "median": 81.1938,
+        "p99": 232.9598,
+        "maximum": 1207.577
+      },
+      {
+        "minimum_denominator": 5000,
+        "jurisdictions": 3123,
+        "states_and_territories": 53,
+        "median": 86.0383,
+        "p99": 238.1903,
+        "maximum": 1207.577
+      },
+      {
+        "minimum_denominator": 10000,
+        "jurisdictions": 2356,
+        "states_and_territories": 53,
+        "median": 86.8412,
+        "p99": 238.0906,
+        "maximum": 1207.577
+      }
+    ]
+  }
+}
