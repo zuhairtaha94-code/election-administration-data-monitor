@@ -1,0 +1,144 @@
+{
+  "source_files": {
+    "2024_EAVS_for_Public_Release_nolabel_V2.csv": {
+      "sha256": "d6f83c48a9f887f1937936d9d46eada8d8ea3750084d9bb1627efdb7c22e9452"
+    },
+    "2024_EAVS_Codebook.xlsx": {
+      "sha256": "8ad78412e20f930c750b34f5123edef40b57a56f2088c44321080247025aac24"
+    }
+  },
+  "dataset_shape": {
+    "rows": 6461,
+    "columns": 535,
+    "states_and_territories": 56,
+    "unique_fips_codes": 6461,
+    "duplicate_fips_codes": 0
+  },
+  "codebook_alignment": {
+    "codebook_variable_rows": 535,
+    "data_columns_missing_from_codebook": [],
+    "codebook_variables_missing_from_data": []
+  },
+  "sentinel_totals_across_numeric_columns": {
+    "valid_skip": 419020,
+    "does_not_apply": 334080,
+    "data_not_available": 422122
+  },
+  "target_variable_profiles": {
+    "A1a": {
+      "label": "A1a Total Reg",
+      "valid_skip": 0,
+      "does_not_apply": 60,
+      "data_not_available": 2,
+      "missing_blank_or_invalid": 0,
+      "valid_nonnegative": 6399
+    },
+    "A1b": {
+      "label": "A1b Total Active",
+      "valid_skip": 0,
+      "does_not_apply": 60,
+      "data_not_available": 4,
+      "missing_blank_or_invalid": 0,
+      "valid_nonnegative": 6397
+    },
+    "A1c": {
+      "label": "A1c Total Inactive",
+      "valid_skip": 0,
+      "does_not_apply": 2388,
+      "data_not_available": 69,
+      "missing_blank_or_invalid": 0,
+      "valid_nonnegative": 4004
+    },
+    "A12a": {
+      "label": "A12a Removed Total",
+      "valid_skip": 0,
+      "does_not_apply": 62,
+      "data_not_available": 40,
+      "missing_blank_or_invalid": 0,
+      "valid_nonnegative": 6359
+    },
+    "C1a": {
+      "label": "C1a Mail Transmitted Total",
+      "valid_skip": 0,
+      "does_not_apply": 7,
+      "data_not_available": 9,
+      "missing_blank_or_invalid": 0,
+      "valid_nonnegative": 6445
+    },
+    "C1b": {
+      "label": "C1b Mail Returned By Voters Total",
+      "valid_skip": 0,
+      "does_not_apply": 7,
+      "data_not_available": 323,
+      "missing_blank_or_invalid": 0,
+      "valid_nonnegative": 6131
+    },
+    "C7a": {
+      "label": "C7a Total Mail Ballots That Entered Curing",
+      "valid_skip": 0,
+      "does_not_apply": 976,
+      "data_not_available": 3461,
+      "missing_blank_or_invalid": 1,
+      "valid_nonnegative": 2023
+    },
+    "C7b": {
+      "label": "C7b Mail Ballots Successfully Cured",
+      "valid_skip": 976,
+      "does_not_apply": 0,
+      "data_not_available": 3643,
+      "missing_blank_or_invalid": 0,
+      "valid_nonnegative": 1842
+    },
+    "C7c": {
+      "label": "C7c Mail Ballots Unsuccessfully Cured",
+      "valid_skip": 976,
+      "does_not_apply": 0,
+      "data_not_available": 3559,
+      "missing_blank_or_invalid": 0,
+      "valid_nonnegative": 1926
+    },
+    "C8a": {
+      "label": "C8a Total Mail Ballots Counted",
+      "valid_skip": 0,
+      "does_not_apply": 7,
+      "data_not_available": 87,
+      "missing_blank_or_invalid": 0,
+      "valid_nonnegative": 6367
+    },
+    "C9a": {
+      "label": "C9a Total Mail Ballots Rejected",
+      "valid_skip": 0,
+      "does_not_apply": 7,
+      "data_not_available": 93,
+      "missing_blank_or_invalid": 0,
+      "valid_nonnegative": 6361
+    }
+  },
+  "candidate_metric_audit": {
+    "mail_rejection_rate_percent": {
+      "definition": "C9a / C1b * 100",
+      "summary_before_denominator_threshold": {
+        "count": 6088,
+        "minimum": 0.0,
+        "median": 0.3862,
+        "maximum": 67.4157
+      },
+      "values_above_100_percent": 0
+    },
+    "mail_ballot_reconciliation": {
+      "definition": "C8a + C9a - C1b",
+      "comparable_records": 6122,
+      "exact_matches": 5777,
+      "nonzero_differences": 345
+    },
+    "removals_per_1000_registered": {
+      "definition": "A12a / A1a * 1000",
+      "summary_before_contextual_filters": {
+        "count": 6341,
+        "minimum": 0.0,
+        "median": 72.8386,
+        "maximum": 1207.577
+      }
+    }
+  }
+}

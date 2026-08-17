@@ -1,0 +1,24 @@
+{
+  "dataset": "2024 Election Administration and Voting Survey",
+  "publisher": "U.S. Election Assistance Commission",
+  "release": "Version 2.0",
+  "release_date": "2026-02-12",
+  "verified_date": "2026-08-17",
+  "landing_page": "https://www.eac.gov/research-and-data/studies-and-reports",
+  "files": [
+    {
+      "role": "data_archive",
+      "filename": "2024_EAVS_V2_csv.zip",
+      "url": "https://www.eac.gov/sites/default/files/2026-02/2024_EAVS_for_Public_Release_nolabel_V2_csv.zip",
+      "sha256": "4073b9f48e1791d44a78ddc543379f6c040c31ce733dfa47676330b4d7f6d6df",
+      "archive_member": "2024_EAVS_for_Public_Release_nolabel_V2.csv",
+      "archive_member_sha256": "d6f83c48a9f887f1937936d9d46eada8d8ea3750084d9bb1627efdb7c22e9452"
+    },
+    {
+      "role": "codebook",
+      "filename": "2024_EAVS_Codebook.xlsx",
+      "url": "https://www.eac.gov/sites/default/files/2025-06/2024_EAVS_Codebook.xlsx",
+      "sha256": "8ad78412e20f930c750b34f5123edef40b57a56f2088c44321080247025aac24"
+    }
+  ]
+}
